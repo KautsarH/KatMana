@@ -153,7 +153,7 @@
   }
 
     function initMap() {
-      rgeocode();
+     // rgeocode();
       // Initialize variables
       //bounds = new google.maps.LatLngBounds();
       infoWindow = new google.maps.InfoWindow;
@@ -231,7 +231,7 @@
       let request = {
         location: position,
         //rankBy: google.maps.places.RankBy.DISTANCE,
-        radius: '300',
+        radius: '150',
         keyword: keyword
       };
 
