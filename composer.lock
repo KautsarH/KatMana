@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64b3b4b8eb57c20e08b8609f477120c3",
+    "content-hash": "30e8f30ca3e024f80a642722f5035d2f",
     "packages": [
         {
             "name": "alexpechkarev/geometry-library",
@@ -447,6 +447,46 @@
                 "schedule"
             ],
             "time": "2020-10-13T00:52:37+00:00"
+        },
+        {
+            "name": "ecrmnn/laravel-https",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ecrmnn/laravel-https.git",
+                "reference": "63f3de05be67a2045c4eef20a58ab48e97e94976"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ecrmnn/laravel-https/zipball/63f3de05be67a2045c4eef20a58ab48e97e94976",
+                "reference": "63f3de05be67a2045c4eef20a58ab48e97e94976",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.4",
+                "phpunit/phpunit": "^6.2"
+            },
+            "type": "module",
+            "autoload": {
+                "psr-4": {
+                    "Ecrmnn\\LaravelHttps\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Eckermann",
+                    "email": "danieleckermann@gmail.com"
+                }
+            ],
+            "description": "Force HTTPS in your Laravel application",
+            "time": "2017-08-17T19:07:52+00:00"
         },
         {
             "name": "egulias/email-validator",

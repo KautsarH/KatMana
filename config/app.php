@@ -176,6 +176,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
         SKAgarwal\GoogleApi\ServiceProvider::class,
+        \Ecrmnn\LaravelHttps\Providers\ServiceProvider::class,
     ],
 
     /*
