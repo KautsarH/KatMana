@@ -13,7 +13,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "https://kat-mana.herokuapp.com/",
+  "start_url": "https://kat-mana.herokuapp.com",
   "theme_color": "#563d7c",
   "background_color": "#563d7c",
   "display": "standalone"
