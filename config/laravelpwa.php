@@ -5,7 +5,7 @@ return [
     'manifest' => [
         'name' => env('APP_NAME', 'KatMana'),
         'short_name' => 'KatMana',
-        'start_url' => '/',
+        'start_url' => 'https://kat-mana.herokuapp.com/',
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
         'display' => 'standalone',
