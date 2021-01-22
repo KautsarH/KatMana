@@ -48,7 +48,7 @@
 							</td>
 						</tr>
 						<tr>
-							<th>Station</th>
+							<th>Longitude</th>
 							<td>
 								<input class="form-control" 
 									type="decimal" name="lng" value="{{ old('lng',$station->lng) }}">
