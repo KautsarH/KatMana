@@ -156,7 +156,7 @@ class PlannerController extends Controller
                                 $data['diff'] = $stIndex-$i;
                                 $data['distance'] = $distance;
                                 $data['duration'] = $duration;
-                            
+                            dd($data);
                                 // Return the new object
                                 return $data;
                             
