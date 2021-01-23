@@ -92,7 +92,7 @@ class PlannerController extends Controller
                     if(!empty($response["results"]) && count($response["results"]) > 0 )
                     {
                         $data = $response["results"];
-                        //dd($response["results"]);
+                        dd($response["results"]);
 
                         //collect data associated with each places & store data in $data and collected in $locations collection
                         $locations = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
