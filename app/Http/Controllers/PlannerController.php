@@ -49,7 +49,7 @@ class PlannerController extends Controller
         //$stations = \App\Station::orderBy('id')->get(); //starts w 0
         $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
-        $radius = 100;
+        $radius = 150;
         $locations = new Collection;
 
         $place = $request['place1'];
