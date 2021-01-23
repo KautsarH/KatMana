@@ -123,14 +123,14 @@ class PlannerController extends Controller
                 }
 
                 //search backward
-                for($i=$stIndex-1; $i >= 0; $i--)
+                for($i=$stIndex-1; $i >= 0; $i--) // tolak satu sbb nak  start dari previous station
                     {
                         if (in_array($i, $inactive)) {
                             continue;
                         }
 
-                        $lat = $stations[$i]->lat;
-                        $lng = $stations[$i]->lng;
+                        $lat = $stations[$i-1]->lat; // kena tolak 1 sebab from $stations tu bukan kira index. kalau sebelum tolak satu, dia kira id station tu bukan index
+                        $lng = $stations[$i-1]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
                         $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
