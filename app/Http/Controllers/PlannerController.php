@@ -46,7 +46,7 @@ class PlannerController extends Controller
         $numstation = count(\App\Station::orderBy('id')->get());
         $inactivedb = \App\Station::where('status', 'inactive')->orderBy('id')->pluck('id');
         $inactive = (array)$inactivedb;
-        $stations = \App\Station::orderBy('id')->get();
+        $stations = \App\Station::orderBy('id')->get(); //starts w 0
         // $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
         $radius = 150;
@@ -129,8 +129,8 @@ class PlannerController extends Controller
                             continue;
                         }
 
-                        $lat = $stations[$i-1]->lat; // kena tolak 1 sebab from $stations tu bukan kira index. kalau sebelum tolak satu, dia kira id station tu bukan index
-                        $lng = $stations[$i-1]->lng;
+                        $lat = $stations[$i]->lat; 
+                        $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
                         $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
@@ -147,13 +147,13 @@ class PlannerController extends Controller
                                 $tempLng = $data['geometry']['location']['lng'];
                                 $tempLocation = $tempLat. "," .$tempLng;
                                 //dd($tempLocation);
-                                dd($location);
+                                //dd($location);
                                 $distancematrix = json_decode(\GoogleMaps::load('distancematrix')->setParam (['origins' => $location, 'destinations' => $tempLocation, 'mode' => 'walking'])->get(),true);
                                 $distance = $distancematrix['rows'][0]['elements'][0]['distance']['text'];
                                 $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
 
                                 // Add the new property
-                                $data['index'] = $i-1;
+                                $data['index'] = $i;
                                 $data['diff'] = $stIndex-$i;
                                 $data['distance'] = $distance;
                                 $data['duration'] = $duration;
