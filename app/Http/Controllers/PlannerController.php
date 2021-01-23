@@ -152,7 +152,7 @@ class PlannerController extends Controller
                                 $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
 
                                 // Add the new property
-                                $data['index'] = $i;
+                                $data['index'] = $i-1;
                                 $data['diff'] = $stIndex-$i;
                                 $data['distance'] = $distance;
                                 $data['duration'] = $duration;
