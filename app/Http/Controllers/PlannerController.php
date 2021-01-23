@@ -48,7 +48,7 @@ class PlannerController extends Controller
         $inactive = (array)$inactivedb;
         $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
-        $radius = 50;
+        $radius = 5;
         $locations = new Collection;
 
         $place = $request['place1'];
