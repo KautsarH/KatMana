@@ -49,7 +49,7 @@ class PlannerController extends Controller
         $stations = \App\Station::orderBy('id')->get();
         // $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
-        $radius = 200;
+        $radius = 150;
         $locations = new Collection;
 
         $place = $request['place1'];
@@ -62,7 +62,7 @@ class PlannerController extends Controller
             if (($end == '') ? $end =null : ($enIndex = $end - 1));
         $option = $request['option'];
             if (($option == '') ? $option ==null : $option = $request['option']);
-        dd($stations);
+        //dd($stations);
 
         if($end == null)
         {
@@ -97,7 +97,7 @@ class PlannerController extends Controller
                         //collect data associated with each places & store data in $data and collected in $locations collection
                         $locations = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
                             
-                            // Add the new property in every places
+                            // Add the new property in each places
                             $tempLat = $data['geometry']['location']['lat'];
                             $tempLng = $data['geometry']['location']['lng'];
                             $tempLocation = $tempLat. "," .$tempLng;
