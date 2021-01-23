@@ -132,7 +132,7 @@ class PlannerController extends Controller
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
-                        //dd($location);
+                        dd($location);
                         $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
                         //dd($response["results"]);
                         if(!empty($response["results"]) && count($response["results"]) > 0 )
