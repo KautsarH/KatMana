@@ -132,7 +132,7 @@ class PlannerController extends Controller
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
-                        dd($location);
+                        //dd($location);
                         $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
                         //dd($response["results"]);
                         if(!empty($response["results"]) && count($response["results"]) > 0 )
@@ -147,6 +147,7 @@ class PlannerController extends Controller
                                 $tempLng = $data['geometry']['location']['lng'];
                                 $tempLocation = $tempLat. "," .$tempLng;
                                 //dd($tempLocation);
+                                dd($location);
                                 $distancematrix = json_decode(\GoogleMaps::load('distancematrix')->setParam (['origins' => $location, 'destinations' => $tempLocation, 'mode' => 'walking'])->get(),true);
                                 $distance = $distancematrix['rows'][0]['elements'][0]['distance']['text'];
                                 $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
