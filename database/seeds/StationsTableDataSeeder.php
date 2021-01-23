@@ -40,8 +40,8 @@ class StationsTableSeeder extends Seeder
         $a8 = \App\Station::updateOrCreate([
             'code' => 'KJ4',
             'name' => 'Sri Rampai',
-            'lat' =>3.1987751,
-            'lng' => 101.736854,
+            'lat' =>3.1987460,
+            'lng' =>101.7371078,
             'status' => 'active'
         ]);
 
