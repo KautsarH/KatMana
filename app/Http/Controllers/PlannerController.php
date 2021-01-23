@@ -46,7 +46,6 @@ class PlannerController extends Controller
         $numstation = count(\App\Station::orderBy('id')->get());
         $inactivedb = \App\Station::where('status', 'inactive')->orderBy('id')->pluck('id');
         $inactive = (array)$inactivedb;
-        //$stations = \App\Station::orderBy('id')->get(); //starts w 0
         $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
         $radius = 150;
@@ -62,7 +61,6 @@ class PlannerController extends Controller
             if (($end == '') ? $end =null : ($enIndex = $end - 1));
         $option = $request['option'];
             if (($option == '') ? $option ==null : $option = $request['option']);
-        //dd($stations);
 
         if($end == null)
         {
@@ -97,7 +95,7 @@ class PlannerController extends Controller
                         //collect data associated with each places & store data in $data and collected in $locations collection
                         $locations = collect($data)->map(function ($data) use ($i,$stIndex,$location) {
                             
-                            // Add the new property in each places
+                            // Add the new property in every places
                             $tempLat = $data['geometry']['location']['lat'];
                             $tempLng = $data['geometry']['location']['lng'];
                             $tempLocation = $tempLat. "," .$tempLng;
@@ -123,13 +121,13 @@ class PlannerController extends Controller
                 }
 
                 //search backward
-                for($i=$stIndex-1; $i >= 0; $i--) // tolak satu sbb nak  start dari previous station
+                for($i=$stIndex-1; $i >= 0; $i--)
                     {
                         if (in_array($i, $inactive)) {
                             continue;
                         }
 
-                        $lat = $stations[$i]->lat; 
+                        $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
                         $location = $lat. "," .$lng;
                         //dd($location);
@@ -147,7 +145,6 @@ class PlannerController extends Controller
                                 $tempLng = $data['geometry']['location']['lng'];
                                 $tempLocation = $tempLat. "," .$tempLng;
                                 //dd($tempLocation);
-                                //dd($location);
                                 $distancematrix = json_decode(\GoogleMaps::load('distancematrix')->setParam (['origins' => $location, 'destinations' => $tempLocation, 'mode' => 'walking'])->get(),true);
                                 $distance = $distancematrix['rows'][0]['elements'][0]['distance']['text'];
                                 $duration = $distancematrix['rows'][0]['elements'][0]['duration']['text'];
@@ -157,7 +154,7 @@ class PlannerController extends Controller
                                 $data['diff'] = $stIndex-$i;
                                 $data['distance'] = $distance;
                                 $data['duration'] = $duration;
-                            //dd($data);
+                            
                                 // Return the new object
                                 return $data;
                             
