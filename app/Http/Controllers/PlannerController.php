@@ -770,7 +770,7 @@ class PlannerController extends Controller
                                     return $data;
                                 
                                 });
-
+                                dd($unmerge);
                                 $locations = $locations->merge($unmerge);
 
                                 //$locations->put('index', $i);
