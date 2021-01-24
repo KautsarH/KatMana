@@ -728,7 +728,7 @@ class PlannerController extends Controller
                             break;
                             }
                            
-                            $locations =null;
+                            // $locations =null;
 
                         }
 
@@ -779,7 +779,7 @@ class PlannerController extends Controller
                                 //$index = $index->merge($i); 
                             break;
                             }
-                            $locations =null;
+                            // $locations =null;
                         }
                         
                         return view('planner', compact('fstation','stations','locations'));
