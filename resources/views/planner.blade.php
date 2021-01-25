@@ -83,7 +83,7 @@
 			<!-- <div id='tooltip'></div> -->
 			<!-- <a title="show on load" data-toggle="tooltip">Hello world</a> -->
 			<!-- <a id="tooltip" rel="tooltip" data-original-title="Just other tool tip data">with other tips about</a>  -->
-			<h7>Click <span class="fas fa-plus"></span> for more option!</h7><br>
+			<h7>Click <span class="fas fa-plus"></span> for more option!</h7><br><br>
 		<button onclick="loading()" class="btn btn-primary text-secondary mr-3" type="submit"><span class="ml-1"><span class="fas fa-search-location"></span></span></button>
 	<br>
 	</form>
