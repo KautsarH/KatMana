@@ -75,7 +75,7 @@ class PlannerController extends Controller
 
                     //dd(gettype($inactive));
                     //skip inactive stations
-                    //dd($inactive);
+                    dd($active);
                    //dd(in_array($i, $inactive, true));
                     if (in_array($i, $active)) {
                         //continue;
