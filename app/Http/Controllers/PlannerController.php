@@ -75,7 +75,7 @@ class PlannerController extends Controller
 
                     //dd(gettype($inactive));
                     //skip inactive stations
-                    dd($active);
+                    //dd($active);
                    //dd(in_array($i, $inactive, true));
                     if (in_array($i, $active)) {
                         //continue;
@@ -84,7 +84,7 @@ class PlannerController extends Controller
                     $lat = $stations[$i]->lat;
                     $lng = $stations[$i]->lng;
                     $location = $lat. "," .$lng;
-                    //dd($location);
+                    dd($location);
 
                     //list of places nearby the station
                     $response = GooglePlaces::nearbySearch($location, $radius,$keyword);
