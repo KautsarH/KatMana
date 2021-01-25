@@ -47,7 +47,8 @@ class PlannerController extends Controller
         $inactivedb = \App\Station::where('status', 'inactive')->orderBy('id')->pluck('id');
         $inactive = (array)$inactivedb;
         $stations = \App\Station::orderBy('id')->get();
-        //$stations = \App\Station::where('status', 'active')->orderBy('id')->get();
+        $activedb = \App\Station::where('status', 'active')->orderBy('id')->pluck('id');
+        $active = (array)$activedb;
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
         $radius = 150;
         $locations = new Collection;
@@ -75,8 +76,8 @@ class PlannerController extends Controller
                     //dd(gettype($inactive));
                     //skip inactive stations
                     //dd($inactive);
-                   dd(in_array($i, $inactive, false));
-                    if (in_array($i, $inactive, false)) {
+                   //dd(in_array($i, $inactive, true));
+                    if (in_array($i, $active)) {
                         //continue;
                     
 
@@ -128,7 +129,7 @@ class PlannerController extends Controller
                 //search backward
                 for($i=$stIndex-1; $i >= 0; $i--)
                     {
-                        if (in_array($i, $inactive, false)) {
+                        if (in_array($i, $active)) {
                             //continue;
                         
 
