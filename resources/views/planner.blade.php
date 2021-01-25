@@ -7,7 +7,7 @@
 	<h3><b><i class="fa fa-map" aria-hidden="true"> | Journey Planner </i></b></h3>
     Got a place in mind but have no clue where the place is? Plan your journey here.
 	<br> <br>
-	<h7>Click <span class="fas fa-plus"> for more option!</h7>
+	
 		<form id="planner-form" action="{{ route('search') }}" method="GET">
 			 <div class="row justify-content-center">
 				<div class="col-12 col-md-10 col-lg-8">
@@ -83,6 +83,7 @@
 			<!-- <div id='tooltip'></div> -->
 			<!-- <a title="show on load" data-toggle="tooltip">Hello world</a> -->
 			<!-- <a id="tooltip" rel="tooltip" data-original-title="Just other tool tip data">with other tips about</a>  -->
+			<h7>Click <span class="fas fa-plus"></span> for more option!</h7>
 		<button onclick="loading()" class="btn btn-primary text-secondary mr-3" type="submit"><span class="ml-1"><span class="fas fa-search-location"></span></span></button>
 	<br>
 	</form>
