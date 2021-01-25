@@ -77,7 +77,7 @@ class PlannerController extends Controller
                     //dd($inactive);
                     if (in_array($i, $inactive)) {
                         continue;
-                    }
+                    
 
                     $lat = $stations[$i]->lat;
                     $lng = $stations[$i]->lng;
@@ -120,6 +120,8 @@ class PlannerController extends Controller
                     break;
                     
                     }
+
+                }
                 }
 
                 //search backward
@@ -127,7 +129,7 @@ class PlannerController extends Controller
                     {
                         if (in_array($i, $inactive)) {
                             continue;
-                        }
+                        
 
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
@@ -171,7 +173,7 @@ class PlannerController extends Controller
                             //$index = $index->merge($i); 
                         break;
                         }
-
+                    }
                     }
                 
                 return view('planner', compact('fstation','stations','locations'));
