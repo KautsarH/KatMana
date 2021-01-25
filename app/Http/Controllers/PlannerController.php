@@ -75,9 +75,9 @@ class PlannerController extends Controller
                     //dd(gettype($inactive));
                     //skip inactive stations
                     //dd($inactive);
-                    dd(in_array($i, $inactive));
-                    if (in_array($i, $inactive)) {
-                        continue;
+                   // dd(in_array($i, $inactive));
+                    if (in_array($i, $inactive, false)) {
+                        //continue;
                     
 
                     $lat = $stations[$i]->lat;
@@ -128,8 +128,8 @@ class PlannerController extends Controller
                 //search backward
                 for($i=$stIndex-1; $i >= 0; $i--)
                     {
-                        if (in_array($i, $inactive)) {
-                            continue;
+                        if (in_array($i, $inactive, false)) {
+                            //continue;
                         
 
                         $lat = $stations[$i]->lat;
