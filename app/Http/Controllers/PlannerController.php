@@ -77,7 +77,7 @@ class PlannerController extends Controller
                     //dd($inactive);
                     if (in_array($i, $inactive)) {
                         continue;
-                    }
+                    
 
                     $lat = $stations[$i]->lat;
                     $lng = $stations[$i]->lng;
@@ -118,6 +118,7 @@ class PlannerController extends Controller
                         
                         });
                     break;
+                    }
                     }
                 }
 
