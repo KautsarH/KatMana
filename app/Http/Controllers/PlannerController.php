@@ -186,7 +186,7 @@ class PlannerController extends Controller
 
             }
             else //has place2
-            {
+            {  dd("hel1");
                 if( $option == 'single')
                 {
                     //forward
@@ -485,7 +485,7 @@ class PlannerController extends Controller
             {   
                 //forward
                 if($stIndex < $enIndex)
-                {
+                {dd("hel2");
                     for($i=$stIndex; $i <= $enIndex; $i++)
                     {
                         if (in_array($i, $inactive)) {
@@ -534,7 +534,7 @@ class PlannerController extends Controller
                     return view('planner', compact('fstation','stations','locations','listStations'));
                 }
                 else //backward
-                {
+                {dd("hel3");
                     for($i=$stIndex; $i >= $enIndex; $i--)
                     {
                         if (in_array($i, $inactive)) {
@@ -585,7 +585,7 @@ class PlannerController extends Controller
             else  // has place 2
             {
                 if( $option == 'single')
-                {
+                {dd("hel4");
                     //forward
                     if($stIndex < $enIndex)
                     {
@@ -692,7 +692,7 @@ class PlannerController extends Controller
                     }
                 } 
                 else // multiple option
-                {
+                {dd("hel5");
                     //forward
                     if($stIndex < $enIndex)
                     {
