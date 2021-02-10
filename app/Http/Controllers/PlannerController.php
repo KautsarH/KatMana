@@ -19,8 +19,8 @@ class PlannerController extends Controller
     {   
         //$stations = \App\Station::orderBy('id')->get();
         
-        $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
-        dd($stations);
+        $listStations = \App\Station::where('status', 'active')->orderBy('id')->get();
+        //dd($stations);
         //     if ($result->isNotEmpty()) {
         //         $locations  = $locations->concat(collect($result));  //use merge or concat
         //         }
