@@ -46,8 +46,8 @@ class PlannerController extends Controller
         $numstation = count(\App\Station::orderBy('id')->get());
         $inactivedb = \App\Station::where('status', 'inactive')->orderBy('id')->pluck('id');
         $inactive = (array)$inactivedb;
-        $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
-        // $stations = \App\Station::orderBy('id')->get();
+        // $stations = \App\Station::where('status', 'active')->orderBy('id')->get();
+        $stations = \App\Station::orderBy('id')->get();
         $activedb = \App\Station::where('status', 'active')->orderBy('id')->pluck('id');
         $active = (array)$activedb;
         $fstation = \App\Station::where('status', 'active')->orderBy('id')->first()->id;
@@ -78,9 +78,9 @@ class PlannerController extends Controller
                     //skip inactive stations
                     //dd($active);
                    //dd(in_array($i, $active));
-                    if (in_array($i, $active) ) {
+                    if (in_array($i, $active)  == 0) {
                         //continue;
-                    }
+                    
                     
                     $lat = $stations[$i]->lat;
                     $lng = $stations[$i]->lng;
@@ -123,16 +123,16 @@ class PlannerController extends Controller
                     break;
                     
                     }
-
+                }
                 
                 }
 
                 //search backward
                 for($i=$stIndex-1; $i >= 0; $i--)
                     {
-                        if (in_array($i, $inactive)) {
+                        if (in_array($i, $active) == 0) {
                             //continue;
-                        }
+                        
 
                         $lat = $stations[$i]->lat;
                         $lng = $stations[$i]->lng;
@@ -176,7 +176,7 @@ class PlannerController extends Controller
                             //$index = $index->merge($i); 
                         break;
                         }
-                    
+                    }
                     }
                 
                 return view('planner', compact('fstation','stations','locations'));
