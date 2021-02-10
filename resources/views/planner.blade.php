@@ -35,7 +35,7 @@
 						<div class="pt-3">
 							<select class="form-control" id="station_id2" name="end">
 							<option value=''>Ending point</option>
-							@foreach ($stations as $station)
+							@foreach ($listStations as $station)
 								<option value="{{ json_decode($station)->id }}" {{ ( Request()->end == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
 									{{ $station->name }} 
 								</option>
