@@ -70,7 +70,7 @@ class PlannerController extends Controller
         {
             if ($place2 == null)
             {
-                
+                dd("hel");
                 //search forward
                 for($i=$stIndex; $i< $numstation; $i++)
                 {
