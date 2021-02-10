@@ -15,7 +15,7 @@
 					<div class="input-group-append">
 						<select class="form-control @error('start') border border-danger @enderror" id="station_id" name="start">
 							<option value=''>Starting point</option>
-							@foreach ($stations as $station)
+							@foreach ($listStations as $station)
 								<option value="{{ json_decode($station)->id }}" {{ ( Request()->start == json_decode($station)->id ) ? 'selected' : ( $fstation == 0) }}> 
 									{{ $station->name }} 
 								</option>
