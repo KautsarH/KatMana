@@ -577,7 +577,7 @@ class PlannerController extends Controller
 
                     }
                     
-                    return view('planner', compact('fstation','stations','locations','listStations');
+                    return view('planner', compact('fstation','stations','locations','listStations'));
                 }
             }
             else  // has place 2
