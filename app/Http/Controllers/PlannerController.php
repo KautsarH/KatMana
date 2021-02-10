@@ -82,7 +82,7 @@ class PlannerController extends Controller
                     if (in_array($i, $active)  == 0) {
                         //continue;
                     
-                    
+                    dd($active);
                     $lat = $stations[$i]->lat;
                     $lng = $stations[$i]->lng;
                     $location = $lat. "," .$lng;
