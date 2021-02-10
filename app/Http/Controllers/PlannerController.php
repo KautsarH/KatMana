@@ -43,6 +43,7 @@ class PlannerController extends Controller
 
 
         //get stations
+        $listStations = \App\Station::where('status', 'active')->orderBy('id')->get();
         $numstation = count(\App\Station::orderBy('id')->get());
         $inactivedb = \App\Station::where('status', 'inactive')->orderBy('id')->pluck('id');
         $inactive = (array)$inactivedb;
@@ -179,7 +180,7 @@ class PlannerController extends Controller
                     }
                     }
                 
-                return view('planner', compact('fstation','stations','locations'));
+                return view('planner', compact('fstation','stations','locations','listStations'));
 
             }
             else //has place2
@@ -281,7 +282,7 @@ class PlannerController extends Controller
                             
                     }
 
-                    return view('planner', compact('fstation','stations','locations'));
+                    return view('planner', compact('fstation','stations','locations','listStations'));
                 } 
                 else // multiple option
                 {
@@ -471,7 +472,7 @@ class PlannerController extends Controller
                         }
                     } 
                  
-                    return view('planner', compact('fstation','stations','locations'));
+                    return view('planner', compact('fstation','stations','locations','listStations'));
 
                 }
             }
@@ -528,7 +529,7 @@ class PlannerController extends Controller
 
                     }
                     
-                    return view('planner', compact('fstation','stations','locations'));
+                    return view('planner', compact('fstation','stations','locations','listStations'));
                 }
                 else //backward
                 {
@@ -576,7 +577,7 @@ class PlannerController extends Controller
 
                     }
                     
-                    return view('planner', compact('fstation','stations','locations'));
+                    return view('planner', compact('fstation','stations','locations','listStations');
                 }
             }
             else  // has place 2
@@ -634,7 +635,7 @@ class PlannerController extends Controller
                                 
                         }                       
                         
-                        return view('planner', compact('fstation','stations','locations'));
+                        return view('planner', compact('fstation','stations','locations','listStations'));
                     }
                     else //backward
                     {
@@ -685,7 +686,7 @@ class PlannerController extends Controller
                             //$locations = null;
                         }
                        
-                        return view('planner', compact('fstation','stations','locations'));
+                        return view('planner', compact('fstation','stations','locations','listStations'));
                     }
                 } 
                 else // multiple option
@@ -789,7 +790,7 @@ class PlannerController extends Controller
                             // $locations =null;
                         }
                         
-                        return view('planner', compact('fstation','stations','locations'));
+                        return view('planner', compact('fstation','stations','locations','listStations'));
 
                     }
                     else //backward
@@ -884,7 +885,7 @@ class PlannerController extends Controller
                             //$locations=null;
                         }
                        
-                        return view('planner', compact('fstation','stations','locations'));
+                        return view('planner', compact('fstation','stations','locations','listStations'));
                     }
 
                 }
